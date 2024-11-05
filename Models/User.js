@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
+const router = express.Router();
 
-// Schema to create Student model
+// Schema to create user model
 const userSchema = new Schema(
   {
     first: {

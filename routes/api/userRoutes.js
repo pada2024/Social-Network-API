@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('./models/User'); // Adjust the path as necessary
+const User = require('./models/User'); 
 
 // GET route to find a user by ID and return their friend count
 router.get('/api/users/:userId', (req, res) => {
