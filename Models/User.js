@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const router = express.Router();
 
 // Schema to create user model
 const userSchema = new Schema(
@@ -17,17 +16,16 @@ const userSchema = new Schema(
       match: [/.+@.+\..+/, 'Please fill a valid email address'],
     },
     thoughts: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       required: true,
       ref: 'Thought', // Reference to the Thought model
     },
 
     friends: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User', // Self-reference for friends
     }],
 
-    assignments: [assignmentSchema],
   },
   {
     toJSON: {

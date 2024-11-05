@@ -1,19 +1,18 @@
-const { Schema, model } = require('mongoose');
+// const { Schema, model } = require('mongoose');
 const mongoose = require('mongoose');
 
 
 // Schema to create Thought model
 const reactionSchema = new mongoose.Schema(
     {
-reactionBody: {
-        type: String,
-        required: true,
-        maxlength: 280, 
-    },
-
     reactionId: {
         type: mongoose.Schema.Types.ObjectId,
         default: () => new mongoose.Types.ObjectId(), // Set default value to a new ObjectId
+    },
+    reactionBody: {
+        type: String,
+        required: true,
+        maxlength: 280, // Maximum length of 280 characters
     },
     username: {
         type: String,
@@ -48,11 +47,6 @@ const thoughtSchema = new mongoose.Schema({
         required: true, // The user that created this thought
     },
     reactions: [reactionSchema], // Array of nested documents using the reactionSchema
-});
-
-// Create a virtual property for reactionCount
-thoughtSchema.virtual('reactionCount').get(function() {
-    return this.reactions.length;
 });
 
 // Create the Thought model
