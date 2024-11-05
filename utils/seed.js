@@ -33,13 +33,14 @@ const thoughtSeed = [
     thoughtText: "Excited to start my new job!",
     createdAt: new Date(),
     username: "lernantino",
-    reactions: [],
+    userId: "5edff358a0fcb779aa7b118b",
+    reactions: []
   },
   {
     thoughtText: "Just finished a great book!",
     createdAt: new Date(),
     username: "geronimo",
-    reactions: [],
+    reactions: []
   },
 ];
 
