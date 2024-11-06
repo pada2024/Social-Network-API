@@ -1,13 +1,11 @@
-// const { Schema, model } = require('mongoose');
-const mongoose = require('mongoose');
-
+const { Schema, model, Types } = require('mongoose');
 
 // Schema to create Thought model
-const reactionSchema = new mongoose.Schema(
+const reactionSchema = new Schema(
     {
     reactionId: {
-        type: mongoose.Schema.Types.ObjectId,
-        default: () => new mongoose.Types.ObjectId(), // Set default value to a new ObjectId
+        type: Schema.Types.ObjectId,
+        default: () => new Types.ObjectId(), // Set default value to a new ObjectId
     },
     reactionBody: {
         type: String,
@@ -28,7 +26,7 @@ const reactionSchema = new mongoose.Schema(
 });
 
 // Main Thought schema
-const thoughtSchema = new mongoose.Schema({
+const thoughtSchema = new Schema({
     thoughtText: {
         type: String,
         required: true,
@@ -50,6 +48,6 @@ const thoughtSchema = new mongoose.Schema({
 });
 
 // Create the Thought model
-const Thought = mongoose.model('Thought', thoughtSchema);
+const Thought = model('Thought', thoughtSchema);
 
 module.exports = Thought;

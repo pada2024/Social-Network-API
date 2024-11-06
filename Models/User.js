@@ -3,7 +3,7 @@ const { Schema, model } = require('mongoose');
 // Schema to create user model
 const userSchema = new Schema(
   {
-    first: {
+    username: {
       type: String,
       required: true,
       unique: true,
@@ -17,7 +17,6 @@ const userSchema = new Schema(
     },
     thoughts: {
       type: Schema.Types.ObjectId,
-      required: true,
       ref: 'Thought', // Reference to the Thought model
     },
 
