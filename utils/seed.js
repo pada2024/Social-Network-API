@@ -21,7 +21,7 @@ const userSeed = [
     username: "geronimo",
     email: 'germo@example.com',
     thoughtText: "OMG, I am soooo happy today!...",
-    userId: "5edff358a0fcb779aa7b118b",
+    userId: "5edff358a0fcb779aa7b118c",
     friends: []
   },
 ];

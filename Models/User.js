@@ -38,6 +38,9 @@ userSchema.virtual('friendCount').get(function() {
     return this.friends.length; // Return the length of the friends array
 });
 
+// Set strictPopulate to false
+userSchema.set('strictPopulate', false);
+
 const User = model('User', userSchema);
 
 module.exports = User;
