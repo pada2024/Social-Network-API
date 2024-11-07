@@ -1,57 +1,34 @@
 # Social-Network-API
-## An API for a social network web application
+## A backend only API for a social network web application
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+- What was your motivation? Building a backend api and testing out my skills based on what I remember and know 
+- Problems I faced. Well I received some help that really set me back and I had to redo my routes. I also encountered an issue where it kept throwing a duplicate key error. This was tricky, but after researching on google, I found I had to open Mongo Shell and update the first key index and once I did that I was able to add as many users as I wanted. I know my code worked but couldn't demonstrate all of it in it's entirety because I could not see the paths. Th visual provided were moving too fast for me and I was really tired over coming a really bad cold, but I perservered. 
 
 ## Table of Contents (Optional)
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Resources
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+Google, office hours, stack overflow, research, and troubleshooting 
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+-Open terminal
+- run node index
+- test out endpoints in insomniafor your get, put, delete routes for user, thought, and reactions from friends
 
-## Usage
+##  Summary
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+All in all this was a fun project to execute. I figured out a way to not have to use my controllers but learned why it is a good idea to use them to segment the code and allow it to have better readability. The duplicate key value issue was new to me and I was proud I was able to research, and figure out a solution on my own. I am eagered to learn and know there are many ways I can improve. 
 
 ## License
 
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+-MIT
 
 ---
 
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+## Screen Recording
 
-## Badges
+https://www.loom.com/share/8f6840df80654a5db47d0749c9cb77ed?sid=fb65ee29-f69d-456d-bd98-d7b35fe78a1f 
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
 
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, list them here.
 
