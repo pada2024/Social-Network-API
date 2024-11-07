@@ -52,7 +52,11 @@ thoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 
+// Set strictPopulate to false
+thoughtSchema.set('strictPopulate', false);
+
 // Create the Thought model
 const Thought = model('Thought', thoughtSchema);
 
 module.exports = Thought;
+
