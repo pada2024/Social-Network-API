@@ -38,8 +38,8 @@ const getAllUsers = async (req, res) => {
 const getUserById = async (req, res) => {
     try {
         const user = await User.findById(req.params.userId)
-            // .populate('thoughts') // Populate the thoughts field
-            // .populate('friends'); // Populate the friends field
+            .populate('thoughts') // Populate the thoughts field
+            .populate('friends'); // Populate the friends field
 
         if (!user) {
             console.log('User not found');
@@ -58,8 +58,41 @@ const getUserById = async (req, res) => {
 router.route("/").get(getAllUsers).post(createUser);
 
 // /user/id
-router.route("/:userId").get(getUserById)
+router.route("/:userId").get(getUserById);
 
+// PUT route to update a user by its _id
+router.put('/users/:id', async (req, res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id, 
+            req.body, 
+            { new: true, runValidators: true } // Options: return the updated document and run validators
+        );
+
+        if (!updatedUser) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        res.json(updatedUser);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+// DELETE route to remove a user by its _id
+router.delete('/users/:id', async (req, res) => {
+    try {
+        const deletedUser = await User.findByIdAndDelete(req.params.id); // Find and delete the user by its _id
+
+        if (!deletedUser) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        res.json({ message: 'User deleted successfully' });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
 
 // GET route to find a user by ID and return their friend count
 // router.get('/api/users/:userId', (req, res) => {

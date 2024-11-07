@@ -47,6 +47,11 @@ const thoughtSchema = new Schema({
     reactions: [reactionSchema], // Array of nested documents using the reactionSchema
 });
 
+// Create a virtual for reactionCount
+thoughtSchema.virtual('reactionCount').get(function() {
+    return this.reactions.length;
+});
+
 // Create the Thought model
 const Thought = model('Thought', thoughtSchema);
 
