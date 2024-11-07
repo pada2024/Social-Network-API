@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
 const connection = require('../config/connection');
 const { User, Thought } = require('../models');
-// const { Schema, model } = require('mongoose');
-
 
 mongoose.connect('mongodb://localhost/socialNetworkDB', {
   useNewUrlParser: true,
@@ -34,13 +32,13 @@ const thoughtSeed = [
     createdAt: new Date(),
     username: "lernantino",
     userId: "5edff358a0fcb779aa7b118b",
-    reactions: []
+    reactions: [],
   },
   {
     thoughtText: "Just finished a great book!",
     createdAt: new Date(),
     username: "geronimo",
-    reactions: []
+    reactions: [],
   },
 ];
 

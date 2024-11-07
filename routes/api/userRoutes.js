@@ -37,7 +37,7 @@ const getAllUsers = async (req, res) => {
 // Function to get a single user by _id
 const getUserById = async (req, res) => {
     try {
-        const user = await User.findById(req.params.userId)
+        const user = await User.findOne({_id:req.params.userId})
             .populate('thoughts') // Populate the thoughts field
             .populate('friends'); // Populate the friends field
 
@@ -50,6 +50,7 @@ const getUserById = async (req, res) => {
         res.json(user);
     } catch (error) {
         console.error('Error retrieving user:', error);
+        res.status(500).send('Internal Server Error');
     }
 };
 
